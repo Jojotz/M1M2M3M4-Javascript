@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <h1>M1 Exercici Variables, Constants i 
+        bucle For.</h1>
+        
+    <input type="text" id="anyIntroduit" placeholder="Intr. el teu any de naixement: " />
+    <input type="button" onClick='Fase2()' Value='Fase 2'/>
+    <p id = "demo"></p>
+
+    <input type="text" id="anyIntroduit3" placeholder="Intr. el teu any de naixement:"/>
+    <input type="button" onClick='Fase3()' Value='Fase 3'/>
+    <p id = "demo1"></p>   
+
+    <input type="button" onClick='Fase4()' Value='Fase4'/>
+    <p id = "demo2"></p>  <br/> 
+       
+    <script>   
+    
+        //Fase 1
+        let nom = "Joan";
+        let cognom1 = "Coll";
+        let cognom2 = "de Miguel";
+        
+        let any = 1984;
+        let mes = 10;
+        let dia = 3;
+        
+        document.write("Nom complet: "+nom +" "+cognom1 +" "+cognom2+ "<br/>");
+        document.write("Data de Naixement: "+dia+"/"+mes+"/"+any+ "<br/>");
+    
+        function Fase2 () {
+            
+            let anyNaixement = document.getElementById("anyIntroduit").value;
+                                    
+            const any = 1948; 
+            let traspas = any;
+            let traspasCont=0;
+            
+            while(traspas <= anyNaixement) {
+                    
+                    traspas = traspas+4;
+                    traspasCont=traspasCont+1;
+            }	
+	
+	        document.write("Hi ha  "+(traspasCont -1) +" anys de traspas entre el teu any de naixament i 1948, comptant també el teu any de naixement." + "<br/>");
+        }    
+
+        function Fase3 () {
+        
+            let anyNaixement = document.getElementById("anyIntroduit3").value;
+                        
+            esTraspas=false; //Soy consciente de que no lo he utilizado.
+
+            for (any=1948; any<=anyNaixement; any++) {
+                
+                if (any % 4 == 0 && any % 100 != 0 || any % 400 == 0) {
+                    document.write("L'any  "+any+" va ser de traspàs."+ "<br/>");
+                } else {
+                    document.write("L'any  "+any+" no va ser de traspàs."+ "<br/>");	
+                }
+            }
+         }    
+
+        function Fase4 () {
+            
+            let nom = prompt("Introdueix el teu nom:");
+            let cognom = prompt("Introdueix el teu primer cognom: ");                        
+            let cognom2 = prompt("Introdueix el teu segon cognom: ");
+                    
+            let dia = prompt("Introdueix el teu dia de naixement: ");
+            let mes = prompt("Introdueix el teu mes de naixement: ");
+            let any = prompt("Introdueix el teu any de naixement: ");
+        
+            let nomComplet =(nom+" "+cognom+" "+cognom2);
+            let dataNaixement =(dia+"/"+mes+"/"+any);
+        
+            document.write ("El meu nom és "+nomComplet+ "<br/>");
+            document.write ("Vaig néixer el "+dataNaixement+ "<br/>");
+        
+            if (any % 4 == 0 && any % 100 != 0 || any % 400 == 0) {
+                document.write("El meu any de naixement és de traspàs");
+            } else {
+                document.write("El meu any de naixement no és de traspàs");
+            }
+        }  
+
+    </script>   
+    </body>
+</html>
